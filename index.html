@@ -10,28 +10,48 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      font-family: sans-serif;
+    }
+    #frame {
+      width: 120px;
+      margin: 2px;
+    }
+    iframe {
+      width: 120px;
+      height: 60px;
+      border: 0px;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+    }
+    #frame-link {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      color: #888;
+      text-decoration: none;
+    }
+    #frame-link:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <script>
-    const adWidth = 120 + 4; // iframe width + small margin
-    const adHeight = 60 + 4;
+    const adWidth = 120 + 4;
+    const adHeight = 60 + 24; // account for link
     const cols = Math.floor(window.innerWidth / adWidth);
     const rows = Math.floor(window.innerHeight / adHeight);
     const total = cols * rows;
 
     for (let i = 0; i < total; i++) {
-      const iframe = document.createElement("iframe");
-      iframe.setAttribute("data-aa", "2396886");
-      iframe.src = "//ad.a-ads.com/2396886?size=120x60";
-      iframe.style.width = "120px";
-      iframe.style.height = "60px";
-      iframe.style.border = "0px";
-      iframe.style.padding = "0";
-      iframe.style.overflow = "hidden";
-      iframe.style.backgroundColor = "transparent";
-      document.body.appendChild(iframe);
+      const div = document.createElement("div");
+      div.id = "frame";
+      div.innerHTML = `
+        <iframe data-aa='2396886' src='//ad.a-ads.com/2396886?size=120x60' style='width:120px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+        <a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2396886&source_type=ad_unit&partner=2396886">Advertise here</a>
+      `;
+      document.body.appendChild(div);
     }
   </script>
 </body>
