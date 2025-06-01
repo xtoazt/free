@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Free</title>
+  <title>Algebra Study Portal</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free educational content for students learning algebra.">
   <style>
     body {
-      margin: 0;
-      background: #111;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      padding: 30px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .ad-block {
+      margin: 20px auto;
+      text-align: center;
     }
     #frame {
       width: 120px;
-      margin: 2px;
-    }
-    iframe {
-      width: 120px;
-      height: 60px;
-      border: 0px;
-      padding: 0;
-      overflow: hidden;
-      background-color: transparent;
+      margin: auto;
     }
     #frame-link {
       display: block;
@@ -31,28 +33,21 @@
       color: #888;
       text-decoration: none;
     }
-    #frame-link:hover {
-      color: #fff;
-    }
   </style>
 </head>
 <body>
-  <script>
-    const adWidth = 120 + 4;
-    const adHeight = 60 + 24; // account for link
-    const cols = Math.floor(window.innerWidth / adWidth);
-    const rows = Math.floor(window.innerHeight / adHeight);
-    const total = cols * rows;
 
-    for (let i = 0; i < total; i++) {
-      const div = document.createElement("div");
-      div.id = "frame";
-      div.innerHTML = `
-        <iframe data-aa='2396886' src='//ad.a-ads.com/2396886?size=120x60' style='width:120px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
-        <a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2396886&source_type=ad_unit&partner=2396886">Advertise here</a>
-      `;
-      document.body.appendChild(div);
-    }
-  </script>
+  <h1>Welcome to the Algebra Study Portal</h1>
+  <p>This site provides free notes and explanations on algebra topics, including variables, linear equations, and quadratic formulas.</p>
+
+  <div class="ad-block">
+    <div id="frame" style="width: 120px;">
+      <iframe data-aa='2396886' src='//ad.a-ads.com/2396886?size=120x60' style='width:120px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+      <a id="frame-link" href="https://aads.com/campaigns/new/?source_id=2396886&source_type=ad_unit&partner=2396886">Advertise here</a>
+    </div>
+  </div>
+
+  <p>Use the navigation bar above to explore lessons, practice problems, and more.</p>
+
 </body>
 </html>
