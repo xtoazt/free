@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FreeMoney</title>
+  <title>Free</title>
   <style>
     body {
       margin: 0;
@@ -11,25 +11,26 @@
       justify-content: center;
       align-items: center;
     }
-    iframe {
-      width: 120px;
-      height: 60px;
-      border: none;
-      margin: 2px;
-    }
   </style>
 </head>
 <body>
   <script>
-    const adWidth = 120 + 4; // iframe width + margin
-    const adHeight = 60 + 4; // iframe height + margin
+    const adWidth = 120 + 4; // iframe width + small margin
+    const adHeight = 60 + 4;
     const cols = Math.floor(window.innerWidth / adWidth);
     const rows = Math.floor(window.innerHeight / adHeight);
     const total = cols * rows;
 
     for (let i = 0; i < total; i++) {
       const iframe = document.createElement("iframe");
-      iframe.src = "https://ad.a-ads.com/2396886?size=120x60";
+      iframe.setAttribute("data-aa", "2396886");
+      iframe.src = "//ad.a-ads.com/2396886?size=120x60";
+      iframe.style.width = "120px";
+      iframe.style.height = "60px";
+      iframe.style.border = "0px";
+      iframe.style.padding = "0";
+      iframe.style.overflow = "hidden";
+      iframe.style.backgroundColor = "transparent";
       document.body.appendChild(iframe);
     }
   </script>
